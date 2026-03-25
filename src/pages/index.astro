@@ -7,44 +7,374 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/portfolio.css" />
+  </head>
+  <body>
+
+    <!-- Custom cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <!-- ══ HERO ══════════════════════════════════════════════ -->
+    <section class="hero">
+      <div class="grid-bg"></div>
+
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="nav-strip">
+          <span>Portfolio — 2025</span>
+          <div class="nav-status">
+            <div class="status-dot"></div>
+            <span>Available for work</span>
+          </div>
+        </div>
+
+        <div class="name-block">
+          <div class="name-line" id="name-wanswa">Wanswa</div>
+          <div class="name-line name-solid">Drake</div>
+          <div class="accent-bar"></div>
+          <p class="role-tag">CS Student &middot; Flutter &middot; Embedded Systems &middot; Django</p>
+          <p class="hero-desc">
+            I build smart systems that solve real&#8209;world problems —
+            from automated marking, embedded systems to matchmaking platforms.
+            Also skilled in graphic design, UI/UX, and passionate about new technologies.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-ghost">
+            Contact me
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right">
+        <span class="bg-counter">01</span>
+        <div class="photo-wrap">
+          <img src="/pictures/drake.jpg" alt="Wanswa Drake" class="hero-photo" />
+          <div class="corner tl"></div>
+          <div class="corner br"></div>
+        </div>
+        <div class="float-tag">Makerere University &middot; Jinja</div>
+        <div class="vert-label">Computer Scientist since &middot; 2024</div>
+      </div>
+    </section>
+
+    <!-- ══ VIDEO ══════════════════════════════════════════════ -->
+    <section class="section video-section hidden" id="video">
+      <div class="section-inner">
+        <div class="section-head">
+          <span class="section-num">02</span>
+          <h2>Project Demo</h2>
+        </div>
+        <div class="video-frame">
+          <video controls>
+            <source src="/videos/embedded.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ABOUT ══════════════════════════════════════════════ -->
+    <section class="section about-section hidden" id="about">
+      <div class="section-inner">
+        <!-- WATERMARK -->
+        <div class="watermark">WANSWA</div>
+
+        <div class="section-head">
+          <span class="section-num">03</span>
+          <h2>About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p><span class="reveal-line">
+              I am Wanswa Drake, a Computer Science student at Makerere University
+              with a strong passion for building impactful and intelligent software solutions that solve
+              real-world problems. With a focus on automation and smart systems,
+              I have developed projects that range from automated marking applications to matchmaking platforms,
+              showcasing my ability to create functional and user-friendly applications.
+            </span></p>
+            <p><span class="reveal-line" style="transition-delay:0.12s">
+              I specialize in both mobile and web development, using technologies like
+              Flutter and Django to create systems that solve real&#8209;world problems
+              efficiently. My approach combines technical skill with creativity to deliver
+              functional, user-friendly applications.
+            </span></p>
+            <p><span class="reveal-line" style="transition-delay:0.24s">
+              I am particularly interested in automation and smart systems, continuously
+              pushing myself with projects that challenge my thinking and growth as a developer.
+            </span></p>
+          </div>
+
+          <div class="about-sidebar">
+            <div class="sidebar-label">Stack</div>
+            <ul class="skill-list">
+              <li>Flutter &amp; Dart</li>
+              <li>Django &amp; Python</li>
+              <li>C Programming</li>
+              <li>Embedded Systems Design</li>
+              <li>UI / UX Design</li>
+            </ul>
+            <div class="facts-row">
+              <div class="fact">
+                <span class="fact-n" data-target="2" data-suffix="+">0</span>
+                <span class="fact-l">Projects</span>
+              </div>
+              <div class="fact">
+                <span class="fact-n" data-target="3" data-suffix="yr">0</span>
+                <span class="fact-l">Study</span>
+              </div>
+              <div class="fact">
+                <span class="fact-n" data-target="5" data-suffix="">0</span>
+                <span class="fact-l">Skills</span>
+              </div>
+              <div class="fact">
+                <span class="fact-n" data-target="100" data-suffix="%">0</span>
+                <span class="fact-l">Committed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCROLLING TICKER -->
+        <div class="ticker-wrap">
+          <div class="ticker-track" id="ticker"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROFILE ════════════════════════════════════════════ -->
+    <section class="section profile-section hidden" id="profile">
+      <div class="section-inner">
+        <div class="section-head">
+          <span class="section-num">04</span>
+          <h2>Profile</h2>
+        </div>
+        <div class="profile-card">
+          <div class="profile-photo-wrap">
+            <img src="/pictures/mike.jpg" alt="Wanswa Drake" class="profile-photo" />
+            <div class="profile-corner tl"></div>
+            <div class="profile-corner br"></div>
+          </div>
+          <div class="profile-info">
+            <div class="profile-name">Wanswa <span>Drake</span></div>
+            <div class="profile-role">Computer Science &middot; Makerere University &middot; Jinja, UG</div>
+            <div class="profile-tags">
+              <span class="profile-tag">Flutter Dev</span>
+              <span class="profile-tag">Django Dev</span>
+              <span class="profile-tag">Embedded Systems</span>
+              <span class="profile-tag">Mobile</span>
+              <span class="profile-tag">Web</span>
+              <span class="profile-tag">UI/UX</span>
+              <span class="profile-tag">Graphic Design</span>
+              <span class="profile-tag">Automation</span>
+            </div>
+          </div>
+          <div class="profile-stats">
+            <div class="pstat"><span class="pstat-n">2+</span><span class="pstat-l">Projects</span></div>
+            <div class="pstat"><span class="pstat-n">3yr</span><span class="pstat-l">CS Study</span></div>
+            <div class="pstat"><span class="pstat-n">5</span><span class="pstat-l">Skills</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROJECTS ═══════════════════════════════════════════ -->
+    <section class="section projects-section hidden" id="projects">
+      <div class="section-inner">
+        <div class="section-head">
+          <span class="section-num">05</span>
+          <h2>Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <span class="project-index">01</span>
+            <h3>AutoMark Application</h3>
+            <p>
+              A smart mobile system built with Flutter that automates the marking process.
+              Users capture images of answer sheets; the system evaluates them instantly
+              — eliminating manual effort and improving accuracy.
+            </p>
+            <div class="project-footer">
+              <div class="tech-tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Image Processing</span>
+              </div>
+              <span class="project-arrow">&#8599;</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <span class="project-index">02</span>
+            <h3>Campus Crush</h3>
+            <p>
+              A web-based matchmaking platform built with Django that lets students
+              connect, interact, and find compatible partners within campus.
+              Integrates intelligent matchmaking logic for deeper engagement.
+            </p>
+            <div class="project-footer">
+              <div class="tech-tags">
+                <span class="tag">Django</span>
+                <span class="tag">Python</span>
+                <span class="tag">Web</span>
+              </div>
+              <span class="project-arrow">&#8599;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTACT ════════════════════════════════════════════ -->
+    <section class="section contact-section hidden" id="contact">
+      <div class="section-inner">
+        <div class="contact-bg-text">HELLO</div>
+        <div class="section-head">
+          <span class="section-num">06</span>
+          <h2>Contact</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-left">
+            <h2 class="contact-headline">Let's build<br/><em>something.</em></h2>
+            <p class="contact-sub">
+              Open to collaborations, internships, and interesting problems.
+              Drop a message — I respond fast.
+            </p>
+          </div>
+          <div class="contact-right">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/256768658988?text=Hello%20Wanswa%20Drake%2C%20I%20came%20across%20your%20portfolio%20and%20I%27d%20like%20to%20connect%20with%20you."
+               class="contact-item" target="_blank" rel="noopener noreferrer">
+              <div class="contact-icon-box">💬</div>
+              <div>
+                <span class="contact-label">WhatsApp</span>
+                <span class="contact-value">Tap me on WhatsApp</span>
+              </div>
+              <span class="contact-arrow">&#8599;</span>
+            </a>
+            <!-- Email -->
+            <a href="mailto:drakemike587@gmail.com?subject=Hello%20Wanswa%20Drake%20-%20Portfolio%20Inquiry&body=Hi%20Wanswa%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I%27d%20like%20to%20get%20in%20touch..."
+               class="contact-item">
+              <div class="contact-icon-box">✉</div>
+              <div>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">drakemike587@gmail.com</span>
+              </div>
+              <span class="contact-arrow">&#8599;</span>
+            </a>
+            <!-- Location -->
+            <div class="contact-item">
+              <div class="contact-icon-box">📍</div>
+              <div>
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Jinja / Kampala / Kaliro, Uganda</span>
+              </div>
+              <span class="contact-arrow">&#8599;</span>
+            </div>
+            <!-- GitHub -->
+            <a href="https://github.com/ffne4" target="_blank" rel="noopener noreferrer"
+               class="contact-item">
+              <div class="contact-icon-box">gh</div>
+              <div>
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/ffne4</span>
+              </div>
+              <span class="contact-arrow">&#8599;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+
+    <script>
+      /* ── Cursor ──────────────────────────────────────── */
+      const cur   = document.getElementById('cursor');
+      const trail = document.getElementById('cursor-trail');
+      let tx = 0, ty = 0;
+
+      document.addEventListener('mousemove', e => {
+        cur.style.left  = e.clientX + 'px';
+        cur.style.top   = e.clientY + 'px';
+        tx = e.clientX; ty = e.clientY;
+      });
+
+      (function animTrail() {
+        trail.style.left = tx + 'px';
+        trail.style.top  = ty + 'px';
+        requestAnimationFrame(animTrail);
+      })();
+
+      /* ── Name scramble ───────────────────────────────── */
+      const CHARS    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const nameEl   = document.getElementById('name-wanswa');
+      const ORIGINAL = 'WANSWA';
+      let frame = 0;
+
+      function scramble() {
+        nameEl.textContent = ORIGINAL.split('').map((c, i) => {
+          if (frame / 2 > i) return c;
+          return CHARS[Math.floor(Math.random() * 26)];
+        }).join('');
+        if (frame < ORIGINAL.length * 2) { frame++; requestAnimationFrame(scramble); }
+        else nameEl.textContent = ORIGINAL;
+      }
+      setTimeout(() => { frame = 0; scramble(); }, 350);
+
+      /* ── Ticker ──────────────────────────────────────── */
+      const skills = ['Flutter','Django','Python','Dart','C Programming','Embedded Systems','UI Design','Graphic Design','REST APIs','Automation','Mobile Dev','Web Dev','Makerere','Uganda'];
+      const track  = document.getElementById('ticker');
+      if (track) {
+        [...skills, ...skills, ...skills, ...skills].forEach((s, i) => {
+          const item = document.createElement('div');
+          item.className = 'ticker-item';
+          item.innerHTML = `<span class="ticker-dot"></span><span class="ticker-text${i % 5 === 0 ? ' ticker-hi' : ''}">${s}</span>`;
+          track.appendChild(item);
+        });
+      }
+
+      /* ── Count-up ────────────────────────────────────── */
+      function countUp(el) {
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        let current  = 0;
+        const inc    = target / 60;
+        const timer  = setInterval(() => {
+          current += inc;
+          if (current >= target) { current = target; clearInterval(timer); }
+          el.textContent = Math.round(current) + suffix;
+        }, 20);
+      }
+
+      /* ── Scroll reveal ───────────────────────────────── */
+      let counted = false;
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('show');
+
+          if (e.target.classList.contains('about-section') && !counted) {
+            counted = true;
+            e.target.querySelectorAll('.reveal-line').forEach(r => r.classList.add('visible'));
+            e.target.querySelectorAll('.fact-n[data-target]').forEach((f, i) =>
+              setTimeout(() => countUp(f), i * 150)
+            );
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+    </script>
+  </body>
 </html>
